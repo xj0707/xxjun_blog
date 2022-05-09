@@ -1,18 +1,17 @@
 # 主要功能包含
 
-- [Y] 使用config来完成环境一键切换  
-- [Y] 登录（token） 授权（auth） 图片上传
-- [Y] 路由api示例 查询/更新/删除/新增
-- [Y] 使用mysql（sequelize）来数据存储
-- [Y] redis 和 cron 来做缓存/定时任务等
-- [Y] 使用ajv进行数据验证
-- [Y] 日志中间件，记录日志
-- [Y] 增加mocha示例
-- [Y] 完成发送邮件功能
-- [x] 做一些访问的限制(koa-ratelimit)
-- [x] 文章发布/评论/点赞
+- [ ] 使用config来完成环境一键切换  
+- [ ] 登录（token） 授权（auth） 图片上传
+- [ ] 路由api示例 查询/更新/删除/新增
+- [ ] 使用mysql（sequelize）来数据存储
+- [ ] redis 和 cron 来做缓存/定时任务等
+- [ ] 使用ajv进行数据验证
+- [ ] 日志中间件，记录日志
+- [ ] 增加mocha示例
+- [ ] 完成发送邮件功能
 
-docker nginx mysql redis
+使用docker-compose部署
+blog nginx mysql redis
 
 api文档地址 ./doc/api.md
 
