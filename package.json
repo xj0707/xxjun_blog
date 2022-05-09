@@ -1,0 +1,39 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "blog",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "mocha",
+    "dev": "pm2 start ./src/app.js  --name myblog --watch",
+    "start": "node ./src/app.js",
+    "docker-compose": "docker-compose up -d --build"
+  },
+  "author": "leo",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^8.11.0",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.7",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-cors": "^0.0.16",
+    "koa-ratelimit": "^5.0.1",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
+    "moment": "^2.29.3",
+    "mysql2": "^2.3.3",
+    "node-cron": "^3.0.0",
+    "nodemailer": "^6.7.5",
+    "redis": "^3.1.2",
+    "sequelize": "^6.19.0",
+    "winston": "^3.7.2",
+    "winston-daily-rotate-file": "^4.6.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0"
+  }
+}

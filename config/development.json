@@ -1,0 +1,72 @@
+{
+    "service": {
+        "host": "server",
+        "port": 3000
+    },
+    "email": {
+        "service": "163",
+        "user": "13076050636@163.com",
+        "pass": "JLBXEGPLNZLIBPAV",
+        "from": "13076050636@163.com"
+    },
+    "db": {
+        "database": "my_blog",
+        "username": "root",
+        "password": "123321",
+        "host": "mysql"
+    },
+    "redis": {
+        "host": "redis",
+        "port": 6379,
+        "pwd": 123321
+    },
+    "jwt": {
+        "secret": "leo",
+        "expiresIn": 3600
+    },
+    "auth": {
+        "pass": [
+            "POST:/api/login",
+            "POST:/api/logout",
+            "POST:/api/resetPwd",
+            "POST:/api/admin/register"
+        ],
+        "role": {
+            "supadmin": [
+                "POST:/api/upload",
+                "GET:/api/admin/list",
+                "DELETE:/api/admin/*",
+                "GET:/api/admin/*",
+                "PUT:/api/admin/*",
+                "POST:/api/article/add",
+                "DELETE:/api/article/*",
+                "GET:/api/article/list",
+                "GET:/api/article/*",
+                "PUT:/api/article/*",
+                "POST:/api/comment/add",
+                "DELETE:/api/comment/*",
+                "GET:/api/comment/list/*",
+                "PUT:/api/comment/*"
+            ],
+            "admin": [
+                "POST:/api/upload",
+                "GET:/api/admin/list",
+                "DELETE:/api/admin/*",
+                "GET:/api/admin/*",
+                "PUT:/api/admin/*",
+                "POST:/api/article/add",
+                "DELETE:/api/article/*",
+                "GET:/api/article/list",
+                "GET:/api/article/*",
+                "PUT:/api/article/*",
+                "POST:/api/comment/add",
+                "DELETE:/api/comment/*",
+                "GET:/api/comment/list/*",
+                "PUT:/api/comment/*"
+            ],
+            "user": [
+                "POST:/api/user/*"
+            ]
+        }
+    }
+}

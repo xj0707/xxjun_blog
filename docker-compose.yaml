@@ -1,0 +1,49 @@
+version: "3.7"
+services:
+  server:
+    container_name: webapp
+    build: ./
+    ports:
+      - "3000:3000"
+    networks:
+      - testnet
+    depends_on:
+      - mysql
+      - redis
+  nginx:
+    container_name: nginx
+    build:
+      context: ./
+      dockerfile: Dockerfile_nginx
+    ports:
+      - 8090:8090
+    networks:
+      - testnet
+    depends_on:
+      - server
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    hostname: localhost
+    networks:
+      - testnet
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123321
+      - MYSQL_DATABASE=my_blog
+  redis:
+    image: redis:latest
+    container_name: redis
+    hostname: localhost
+    networks:
+      - testnet
+    command: redis-server /usr/local/etc/redis.conf --requirepass 123321
+    volumes:
+      - ./redis/redis.conf:/usr/local/etc/redis.conf
+    ports:
+      - "6379:6379"
+networks:
+  testnet:
